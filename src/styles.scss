@@ -1,0 +1,167 @@
+@use '@angular/material' as mat;
+//@use '@matheo/datepicker/theming' as datepicker; todo: uncomment and fix or remove datepicker entirely
+
+@include mat.core();
+
+
+$my-primary: mat.define-palette(mat.$blue-palette, 300);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((
+        color: (
+                primary: $my-primary,
+                accent: $my-accent,
+        )
+));
+
+//@include datepicker.mat-datepicker-theme($my-theme);  todo: uncomment and fix or remove datepicker entirely
+
+//@include mat.core-theme($my-theme);
+//@include mat.button-theme($my-theme);
+//@include mat.dialog-theme($my-theme);
+//@include mat.radio-theme($my-theme);
+@include mat.all-component-themes($my-theme);
+
+
+$btn-primary: #31B6EB;
+$bgcolor: #79CDEE;
+$light-text: #fff;
+$dark-text: #222;
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  line-height: 1.4;
+  color: $dark-text;
+}
+
+.trans, button {
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.box-content {
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, .1);
+  -moz-box-shadow:    0px 5px 20px 0px rgba(0, 0, 0, .1);
+  box-shadow:         0px 5px 20px 0px rgba(0, 0, 0, .1);
+}
+
+@mixin flex {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 9.5px 15px;
+  &:focus, &:active, &:visited {
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px
+  }
+  &:hover {
+    outline: none;
+  }
+}
+
+.btn-light {
+  background: $bgcolor;
+}
+
+.item {
+  padding: 15px;
+  border: 1px solid rgba(0,0,0,.1);
+  margin-bottom: 15px;
+}
+
+.order-list-item {
+  min-height: 600px;
+  .order-block-date {
+    &.utc {
+      display: none;
+    }
+  }
+}
+.block-horizontal-warning-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  gap: 10px;
+  align-items: center;
+  &.legend-order {
+    text-align: center;
+    .order-block-time {
+      background: transparent;
+    }
+  }
+}
+.order-block-time {
+  flex: 0 0 10%;
+  max-width: 10%;
+  background: rgba($bgcolor, 0.1);
+  padding: 25px 0;
+  @include flex;
+  flex-direction: column;
+  .tittle {
+    text-align: center;
+  }
+}
+.order-block-organization-terminal-name {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.order-block-status-order {
+  flex: 0 0 10%;
+  max-width: 10%;
+  order-status {
+    border: 1px solid $btn-primary;
+    border-radius: 8px;
+    padding: 7px 0;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+.order-block-client-info {
+  flex: 0 0 10%;
+  max-width: 10%;
+}
+.order-block-comments {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.order-block-summary-pay {
+  flex: 0 0 15%;
+  max-width: 15%;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.container-order-info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(auto);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  justify-items: stretch;
+  align-items: stretch;
+  max-width: 50%;
+  background: rgba(0,0,0, .05);
+}

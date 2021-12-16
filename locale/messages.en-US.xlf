@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="ru" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="482831866677831123" datatype="html">
+        <source>Title</source>
+        <trans></trans>
+      </trans-unit>
+      <trans-unit id="7605576651366306485" datatype="html">
+        <source>Menu</source>
+        <trans></trans>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,12 @@
+<div>
+    <button type="button" mat-button (click)="sideNav.toggle()" i18n>
+        Меню
+    </button>
+    <mat-sidenav-container class="example-container" autosize style="min-height: 100vh">
+        <mat-sidenav #sideNav class="example-sidenav" mode="side">
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
